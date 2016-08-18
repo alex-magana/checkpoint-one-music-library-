@@ -1,5 +1,23 @@
-require_relative 'Artist.rb'
-require_relative 'Genre.rb'
+=begin 
+Accepts a name upon initialization and set that property correctly. The name 
+property should be readable and writeable by the object.
+
+Contains a class variable @@all that is set to an empty array and is 
+prepared to store all saved instances. This class variable should be 
+accessible via the class method .all.
+
+It responds to a #save method that adds the instance itself into the 
+class variable @@all.
+
+The class empties it's @@all array via a class method .destroy_all.
+
+Implements a custom constructor .create that instantiates 
+an instance using .new but also evokes #save on that instance, forcing 
+it to persist immediately.
+=end
+
+require_relative 'artist.rb'
+require_relative 'genre.rb'
 
 class Song
 
@@ -42,22 +60,10 @@ class Song
     end
 
     def self.find_by_name(name)
-        # search_result = nil
-        # @@all.each do |song|
-        #     if song.name == name
-        #         search_result = song
-        #     end
-        # end
-        # search_result
         @@all.detect { |song| song.name == name}
     end
 
     def self.find_or_create_by_name(name)
-        # search_result = nil
-        # @@all.each do |song|
-        #     if 
-        #     end
-        # end
         song = find_by_name(name)
         song = Song.create(name) unless song
         song
