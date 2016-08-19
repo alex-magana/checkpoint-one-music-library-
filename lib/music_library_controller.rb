@@ -6,7 +6,7 @@ The #call method that starts the CLI and asks the user for
 input. Check out the tests for specifics
 =end
 
-require_relative 'MusicImporter.rb'
+require_relative 'music_importer.rb'
 
 class MusicLibraryController
 
@@ -36,7 +36,7 @@ class MusicLibraryController
         introduction
         
         while true
-            print @@prompt
+            print PROMPT
             user_input = self.send(:gets).chomp
             break if user_input.to_s == "exit" 
             self.command_evaluate(user_input)
@@ -89,13 +89,17 @@ class MusicLibraryController
     def list_artist
         puts "Enter the name of the artist."
         artist_name = self.send(:gets).chomp
-        @@songs_all.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" if song.artist.name == artist_name }
+        artist = Artist.find_by_name(artist_name)
+        artist.songs.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" }
+        # require 'pry'; binding.pry;
     end
 
     def list_genre
         puts "Enter the genre whose songs you would like listed."
         genre_name = self.send(:gets).chomp
-        @@songs_all.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" if song.genre.name == genre_name }
+        genre = Genre.find_by_name(genre_name)
+        genre.songs.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" }
+        # require 'pry'; binding.pry;
     end
 
 end
