@@ -1,4 +1,4 @@
-require_relative 'Song.rb'
+require_relative 'song.rb'
 
 class MusicImporter
 
