@@ -22,16 +22,17 @@ require_relative '../concerns/concerns_findable.rb'
 
 class Song
 
-    # extend Concerns::Findable
+    extend Concerns::Findable
 
-    attr_accessor   :name, :artist, :genre
+    attr_accessor   :name
+    attr_reader     :artist, :genre
 
     @@all = []
 
     def initialize(name, artist = nil, genre = nil)
         @name = name
         self.artist = artist if artist
-        self.genre = genre if genre   
+        self.genre = genre if genre
     end
 
     def self.create(name)
@@ -61,24 +62,10 @@ class Song
         @@all.clear()
     end
 
-    # use Concerns::Findable to implement find_by_name 
-    def self.find_by_name(name)
-        @@all.detect { |song| song.name == name}
-    end
-
-    # use Concerns::Findable to implement find_or_create_by_name
-    def self.find_or_create_by_name(name)
-        song = find_by_name(name)
-        song = Song.create(name) unless song
-        song
-    end
-
     def self.new_from_filename(file_name)
-        song_details = file_name.split(" - ")
-        #use Concerns::Findable to detect artist
-        artist = Artist.all.detect {|artist| artist.name == (song_details[0]).strip} || Artist.create((song_details[0]).strip)
-        #use Concerns::Findable to detect genre
-        genre = Genre.all.detect { |genre| genre.name == ((song_details[2]).gsub(".mp3", "")).strip } || Genre.create(((song_details[2]).gsub(".mp3", "")).strip)
+        song_details = file_name.gsub(".mp3", "").split(" - ")
+        artist = Artist.find_or_create_by_name((song_details[0]).strip)
+        genre = Genre.find_or_create_by_name((song_details[2]).strip)
         song = Song.new((song_details[1]).strip, artist, genre)
     end
 
