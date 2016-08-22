@@ -20,8 +20,9 @@ require_relative 'artist.rb'
 require_relative 'genre.rb'
 require_relative '../concerns/concerns_findable.rb'
 
-class Song
-    # extend Concerns::Findable
+class Song
+
+    # extend Concerns::Findable
 
     attr_accessor   :name, :artist, :genre
 
