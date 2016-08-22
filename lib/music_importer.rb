@@ -6,17 +6,14 @@ class MusicImporter
 
     def initialize(path)
         @path = path
-        @file_names = []
     end
 
     def files
-        Dir::entries(path).select { |_file| @file_names.push(_file) if File.file?"#{path}/#{_file}"}
-        @file_names
+        Dir::entries(path).select { |_file| File.file?"#{path}/#{_file}"}
     end
 
     def import
-        files_all = files
-        files_all.each { |file| Song.create_from_filename(file) }
+        files.each { |file| Song.create_from_filename(file) }
     end
 
 end
