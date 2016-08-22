@@ -12,7 +12,7 @@ class MusicLibraryController
 
     attr_accessor   :path, :music_importer
 
-    @@commands = {"list songs" => :list_songs, 
+    COMMANDS = {"list songs" => :list_songs, 
         "list artists" => :list_artists, 
         "list genres" => :list_genres, 
         "play song" => :play_song,
@@ -33,7 +33,7 @@ class MusicLibraryController
             print PROMPT
             user_input = self.send(:gets).chomp
             break if user_input == "exit" 
-            self.command_evaluate(user_input)
+            self.command_execute(user_input)
         end
         
     end
@@ -45,15 +45,12 @@ class MusicLibraryController
         "\tlist genres\t: List all genres.\n" \
         "\tplay song\t: Play a song.\n" \
         "\tlist artist\t: List the artist.\n" \
-        "\tlist genre\t: List the genre.\n"
-    end
-
-    def command_evaluate(command_name)
-        self.command_execute(@@commands[command_name])
+        "\tlist genre\t: List the genre.\n" \
+        "\texit\t: Quit the program.\n"
     end
 
     def command_execute(command_name)
-        self.send(command_name)
+        self.send(COMMANDS[command_name])
     end
 
     def list_songs
