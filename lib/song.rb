@@ -16,61 +16,62 @@ an instance using .new but also evokes #save on that instance, forcing
 it to persist immediately.
 =end
 
-require_relative 'artist.rb'
-require_relative 'genre.rb'
-require_relative '../concerns/concerns_findable.rb'
-
 class Song
-
-    extend Concerns::Findable
-
-    attr_accessor   :name
-    attr_reader     :artist, :genre
-
-    @@all = []
-
-    def initialize(name, artist = nil, genre = nil)
-        @name = name
-        self.artist = artist if artist
-        self.genre = genre if genre
+  
+  extend Concerns::Findable
+  
+  attr_accessor   :name
+  attr_reader     :artist, :genre
+  
+  @@all = []
+  
+  def initialize(name, artist = nil, genre = nil)
+    @name = name
+    self.artist = artist if artist
+    self.genre = genre if genre
+  end
+  
+  def self.create(name)
+    Song.new(name).save
+  end
+  
+  def self.all
+    @@all
+  end
+  
+  def artist=(_artist)
+    @artist = _artist
+    @artist.add_song(self)
+  end
+  
+  def genre=(_genre)
+    @genre = _genre
+    @genre.songs.push(self) unless @genre.songs.include? self
+  end
+  
+  def save
+    @@all.push(self)
+    self
+  end
+  
+  def self.destroy_all
+    @@all.clear()
+  end
+  
+  def self.new_from_filename(file_name)
+    song_details = file_name.gsub(".mp3", "").split(" - ")
+    if song_details.size == 3
+      artist = Artist.find_or_create_by_name((song_details[0]).strip)
+      genre = Genre.find_or_create_by_name((song_details[2]).strip)
+      song = Song.new((song_details[1]).strip, artist, genre)
+    else
+      song = Song.new((song_details[0]).strip)
     end
-
-    def self.create(name)
-        Song.new(name).save
-    end
-
-    def self.all
-        @@all
-    end
-
-    def artist=(_artist)
-        @artist = _artist
-        @artist.add_song(self)
-    end
-
-    def genre=(_genre)
-        @genre = _genre
-        @genre.songs.push(self) unless @genre.songs.include? self
-    end
-
-    def save
-        @@all.push(self)
-        self
-    end
-
-    def self.destroy_all
-        @@all.clear()
-    end
-
-    def self.new_from_filename(file_name)
-        song_details = file_name.gsub(".mp3", "").split(" - ")
-        artist = Artist.find_or_create_by_name((song_details[0]).strip)
-        genre = Genre.find_or_create_by_name((song_details[2]).strip)
-        song = Song.new((song_details[1]).strip, artist, genre)
-    end
-
-    def self.create_from_filename(file_name)
-        new_from_filename(file_name).save
-    end
-
+    
+  end
+  
+  def self.create_from_filename(file_name)
+    new_from_filename(file_name).save
+  end
+  
 end
