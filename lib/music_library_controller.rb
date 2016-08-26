@@ -1,56 +1,45 @@
-=begin 
-Initializes with an optional path to the music, but defaults 
-to ./db/mp3s. It creates a MusicImporter and imports the music.
+# Initializes with an optional path to the music, but defaults 
+# to ./db/mp3s. It creates a MusicImporter and imports the music.
 
-The #call method that starts the CLI and asks the user for 
-input. Check out the tests for specifics
-=end
-
-require_relative 'music_importer.rb'
+# The #call method that starts the CLI and asks the user for 
+# input. Check out the tests for specifics
 
 class MusicLibraryController
-  
+
   attr_accessor   :path
-  
-  COMMANDS = {"list songs" => :list_songs, 
-    "list artists" => :list_artists, 
-    "list genres" => :list_genres, 
+  attr_reader     :music_library_view
+
+  COMMANDS = {"list songs" => :list_songs,
+    "list artists" => :list_artists,
+    "list genres" => :list_genres,
     "play song" => :play_song,
     "list artist" => :list_artist,
     "list genre" => :list_genre,
     "help" => :help}
-  
-  PROMPT = "music_library>"
-  
+
+  PROMPT = "santuri>"
+
   def initialize(path = "./db/mp3s")
     @path = path
     MusicImporter.new(path).import
+    @music_library_view = MusicLibraryView.new
   end
-  
+
   def call
     introduction
-    
+
     while true
       print PROMPT
-      user_input = self.send(:gets).chomp.strip.downcase
+      user_input = gets.chomp.strip.downcase
       break if user_input == "exit" 
       self.command_execute(user_input)
     end
-    
   end
-  
-  def introduction    
-    print "Music Library\n\n\t\tUsage:\n" \
-      "\tlist songs\t: List all songs.\n" \
-      "\tlist artists\t: List all artists.\n" \
-      "\tlist genres\t: List all genres.\n" \
-      "\tplay song\t: Play a song.\n" \
-      "\tlist artist\t: List the artist.\n" \
-      "\tlist genre\t: List the genre.\n" \
-      "\texit\t\t: Quit the program.\n" \
-      "\thelp\t\t: View available commands.\n"
+
+  def introduction
+    music_library_view.introduction
   end
-  
+
   def command_execute(command_name)
     if COMMANDS.include? command_name
       self.send(COMMANDS[command_name])
@@ -59,61 +48,39 @@ class MusicLibraryController
       help
     end
   end
-  
+
   def list_songs
-    Song.all.each_with_index do |song, i|
-      puts "#{i + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
-    end
+    music_library_view.list_songs
   end
-  
+
   def list_artists
-    Artist.all.each_with_index do |artist, i|
-      puts "#{i + 1}. #{artist.name}"
-    end
+    music_library_view.list_artists
   end
-  
+
   def list_genres
-    Genre.all.each_with_index do |genre, i|
-      puts "#{i + 1}. #{genre.name}"
-    end
+    music_library_view.list_genres
   end
-  
+
   def play_song
     puts "Enter the number of the song to play."
-    song_number = self.send(:gets).chomp.to_i
-    match = /[a-zA-Z]+/.match(song_number.to_s)
-    if (song_number <= Song.all.size) && (match == nil)
-      song = Song.all[song_number - 1]
-      puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
-    else
-      puts "The song you requested does not exist. Enter numbers 1 through #{Song.all.size}."
-    end
+    song_number = gets.chomp.to_i
+    music_library_view.play_song(song_number)
   end
-  
+
   def list_artist
     puts "Enter the name of the artist."
-    artist_name = self.send(:gets).chomp
-    artist = Artist.find_by_name(artist_name)
-    if artist
-      artist.songs.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" }
-    else
-      "The artist you requested does not exist. Use command 'list artists' to view available artists."
-    end
+    artist_name = gets.chomp
+    music_library_view.list_artist(artist_name)
   end
-  
+
   def list_genre
     puts "Enter the genre whose songs you would like listed."
-    genre_name = self.send(:gets).chomp
-    genre = Genre.find_by_name(genre_name)
-    if genre
-      genre.songs.each { |song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}" }
-    else
-      "The genre you requested does not exist. Use command 'list genres' to view available artists."
-    end
+    genre_name = gets.chomp
+    music_library_view.list_genre(genre_name)
   end
-  
+
   def help
     introduction
   end
-  
+
 end
