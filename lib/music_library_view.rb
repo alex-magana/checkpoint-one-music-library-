@@ -4,7 +4,7 @@
 class MusicLibraryView
 
   def introduction
-    print "Music Library\n\n\t\tUsage:\n" \
+    print "Santuri\n\n\t\tUsage:\n" \
       "\tlist songs\t: List all songs.\n" \
       "\tlist artists\t: List all artists.\n" \
       "\tlist genres\t: List all genres.\n" \
