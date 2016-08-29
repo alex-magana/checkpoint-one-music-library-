@@ -55,7 +55,7 @@ A utility that allows you to:
     1. Run `ruby bin/musiclibrary`
 
 ### Running tests
-    In the checkpoint-one-music-library directory:
+   In the checkpoint-one-music-library directory:
  
     1. Run `bundle exec rspec`
     2. Use `rspec` for subsequent testing
