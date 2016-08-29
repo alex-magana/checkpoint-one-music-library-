@@ -23,8 +23,8 @@ A utility that allows you to:
    * help: View available commands.
 
 ## Getting Started
-
-   ### Installation
+   
+### Installation
    1. Download and setup Ruby
 
        [Setting up ruby](https://www.ruby-lang.org/en/downloads/)
@@ -48,15 +48,15 @@ A utility that allows you to:
    5. Use bundler to install the project dependencies.
 
        `bundle install`
- 
-   ### Running the application
+
+### Running the application
    In the checkpoint-one-music-library directory:
 
     1. Run `ruby bin/musiclibrary`
-    
-   ### Running tests
+
+### Running tests
     In the checkpoint-one-music-library directory:
-    
+ 
     1. Run `bundle exec rspec`
     2. Use `rspec` for subsequent testing
 
