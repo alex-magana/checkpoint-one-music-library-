@@ -13,45 +13,50 @@ A utility that allows you to:
 
 ## Usage:
 
-   list songs:     List all songs.
-   list artists:   List all artists.
-   list genres:    List all genres.
-   play song:      Play a song.
-   list artist:    List the artist.
-   list genre:     List the genre.
-   exit:           Quit the program.
-   help:           View available commands.
+   * list songs: List all songs.
+   * list artists: List all artists.
+   * list genres: List all genres.
+   * play song: Play a song.
+   * list artist: List the artist.
+   * list genre: List the genre.
+   * exit: Quit the program.
+   * help: View available commands.
 
 ## Getting Started
 
    ### Installation
    1. Download and setup Ruby
-       (Setting up ruby)[https://www.ruby-lang.org/en/downloads/]
+
+       [Setting up ruby](https://www.ruby-lang.org/en/downloads/)
 
    2. To ensure you have Ruby on your computer:
-       Open the terminal
-       Type `ruby -v`.
-       If you have Ruby installed, you should see a response that includes the version number.
+       * Open the terminal
+       * Type `ruby -v`.
+       * If you have Ruby installed, you should see a response that includes the version number.
 
    3. Clone the repository to a local folder of your choice.
-       On GitHub navigate the main page of the repository. [Here](https://github.com/andela-amagana/checkpoint-one-music-library-)
-       Under the repository name, click on the URL and copy it
-       Open Git Bash
-       Change the working directory on cmd to the location where you want your clone made
-       Type `git clone` and paste the URL. Press *Enter** to finish creating your cloned repository
+       * On GitHub navigate the main page of the repository. [Here](https://github.com/andela-amagana/checkpoint-one-music-library-)
+       * Under the repository name, click on the URL and copy it
+       * Open Git Bash
+       * Change the working directory on cmd to the location where you want your clone made
+       * Type `git clone` and paste the URL. Press *Enter** to finish creating your cloned repository
  
-   4. Install bundle using the following command
+   4. Install bundle using the following command.
+
        `gem install bundler`
 
    5. Use bundler to install the project dependencies.
+
        `bundle install`
  
    ### Running the application
-   In the checkpoint-one-music-library directory;
+   In the checkpoint-one-music-library directory:
+
     1. Run `ruby bin/musiclibrary`
     
    ### Running tests
-    In the checkpoint-one-music-library directory;
+    In the checkpoint-one-music-library directory:
+    
     1. Run `bundle exec rspec`
     2. Use `rspec` for subsequent testing
 
