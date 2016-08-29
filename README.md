@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-.svg?branch=develop)](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-)
+
 # Santuri
 
 ## Introduction
