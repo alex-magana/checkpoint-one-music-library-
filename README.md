@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-.svg?branch=develop)](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-)
+[![Coverage Status](https://coveralls.io/repos/github/andela-amagana/checkpoint-one-music-library-/badge.svg)](https://coveralls.io/github/andela-amagana/checkpoint-one-music-library-)
 
 # Santuri
 
