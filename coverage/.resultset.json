@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/config/environment.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/config/environment.rb": [
         1,
         1,
         null,
@@ -10,7 +10,7 @@
         null,
         1
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/artist.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/artist.rb": [
         null,
         null,
         null,
@@ -53,13 +53,13 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/concerns/concerns_findable.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/concerns/concerns_findable.rb": [
         1,
         null,
         1,
         null,
         1,
-        10403,
+        10419,
         null,
         null,
         1,
@@ -70,7 +70,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/concerns/generic_class.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/concerns/generic_class.rb": [
         1,
         null,
         1,
@@ -91,7 +91,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/concerns/generic_instance.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/concerns/generic_instance.rb": [
         1,
         null,
         1,
@@ -105,7 +105,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/genre.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/genre.rb": [
         null,
         null,
         null,
@@ -143,7 +143,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/music_importer.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/music_importer.rb": [
         null,
         null,
         null,
@@ -168,7 +168,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/music_library_controller.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/music_library_controller.rb": [
         null,
         null,
         null,
@@ -256,22 +256,29 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/music_library_view.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/music_library_view.rb": [
         null,
         null,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         1,
         7,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        7,
+        7,
+        7,
         null,
         null,
         1,
@@ -331,7 +338,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/lib/song.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/lib/song.rb": [
         null,
         null,
         null,
@@ -393,7 +400,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/001_song_basics_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/001_song_basics_spec.rb": [
         1,
         null,
         1,
@@ -450,7 +457,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/002_artist_basics_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/002_artist_basics_spec.rb": [
         1,
         null,
         1,
@@ -506,7 +513,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/003_genre_basics_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/003_genre_basics_spec.rb": [
         1,
         null,
         1,
@@ -562,7 +569,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/004_songs_and_artists_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/004_songs_and_artists_spec.rb": [
         1,
         null,
         1,
@@ -666,7 +673,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/005_songs_and_genres_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/005_songs_and_genres_spec.rb": [
         1,
         null,
         1,
@@ -729,7 +736,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/006_artists_and_genres_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/006_artists_and_genres_spec.rb": [
         1,
         null,
         1,
@@ -808,7 +815,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/007_findable_songs_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/007_findable_songs_spec.rb": [
         1,
         1,
         1,
@@ -829,7 +836,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/008_findable_module_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/008_findable_module_spec.rb": [
         1,
         null,
         1,
@@ -851,7 +858,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/009_findable_artists_and_genres_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/009_findable_artists_and_genres_spec.rb": [
         1,
         1,
         1,
@@ -903,7 +910,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/010_music_importer_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/010_music_importer_spec.rb": [
         1,
         null,
         1,
@@ -991,7 +998,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/011_music_library_controller_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/011_music_library_controller_spec.rb": [
         1,
         null,
         1,
@@ -1038,7 +1045,7 @@
         null,
         null
       ],
-      "C:/Users/ALEX/Documents/GitHub/checkpoint-one-music-library-tia/checkpoint-one-music-library/spec/012_musiclibrary_cli_spec.rb": [
+      "/Users/alexmagana/Documents/GitHub/checkpoint-one-music-library-/spec/012_musiclibrary_cli_spec.rb": [
         1,
         null,
         1,
@@ -1118,6 +1125,6 @@
         null
       ]
     },
-    "timestamp": 1472216941
+    "timestamp": 1473061313
   }
 }

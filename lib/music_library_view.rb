@@ -3,8 +3,9 @@
 
 class MusicLibraryView
 
-  def introduction
-    print "Santuri\n\n\t\tUsage:\n" \
+  TITLE = "Santuri"
+
+  USAGE = "\n\n\t\tUsage:\n" \
       "\tlist songs\t: List all songs.\n" \
       "\tlist artists\t: List all artists.\n" \
       "\tlist genres\t: List all genres.\n" \
@@ -13,6 +14,12 @@ class MusicLibraryView
       "\tlist genre\t: List the genre.\n" \
       "\texit\t\t: Quit the program.\n" \
       "\thelp\t\t: View available commands.\n"
+
+  def introduction
+    font = Figlet::Font.new("./lib/fonts/univers.flf")
+    figlet = Figlet::Typesetter.new(font)
+    print figlet[TITLE]
+    print USAGE
   end
 
   def list_songs
@@ -39,7 +46,7 @@ class MusicLibraryView
       song = Song.all[song_number - 1]
       puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
     else
-      puts "The song you requested does not exist. Enter" \
+      puts "The song you requested does not exist. Enter " \
        "numbers 1 through #{Song.all.size}."
     end
   end
@@ -67,7 +74,7 @@ class MusicLibraryView
   end
 
   def help
-    introduction
+    print USAGE
   end
 
 end

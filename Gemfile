@@ -8,3 +8,4 @@ gem 'pry'
 gem 'require_all'
 gem 'colorize'
 gem 'coveralls', require: false
+gem 'figlet'

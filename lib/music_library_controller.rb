@@ -17,7 +17,7 @@ class MusicLibraryController
     "list genre" => :list_genre,
     "help" => :help}
 
-  PROMPT = "santuri>"
+  PROMPT = "santuri>".colorize(:yellow)
 
   def initialize(path = "./db/mp3s")
     @path = path
@@ -44,7 +44,7 @@ class MusicLibraryController
     if COMMANDS.include? command_name
       self.send(COMMANDS[command_name])
     else
-      puts "Invalid command.\n"
+      puts "Invalid command.\n".colorize(:red)
       help
     end
   end
@@ -80,7 +80,7 @@ class MusicLibraryController
   end
 
   def help
-    introduction
+    music_library_view.help
   end
 
 end
