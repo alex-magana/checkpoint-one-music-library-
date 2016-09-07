@@ -1,7 +1,14 @@
 module Concerns
+  def self.included(base)
+    base.extend(ModelHelper)
+  end
 
-  module Generic
+  def save
+    self.class.all.push(self)
+    self
+  end
 
+  module ModelHelper
     def create(name)
       new(name).save
     end
@@ -13,7 +20,5 @@ module Concerns
     def destroy_all
       all.clear
     end
-
   end
-
 end

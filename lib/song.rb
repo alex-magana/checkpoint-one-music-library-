@@ -15,13 +15,11 @@
 # it to persist immediately.
 
 class Song
-
   extend Concerns::Findable
-  extend Concerns::Generic
-  include Concerns::GenericInstance
+  include Concerns
 
-  attr_accessor   :name
-  attr_reader     :artist, :genre
+  attr_accessor :name
+  attr_reader :artist, :genre
 
   @@all = []
 
@@ -55,6 +53,5 @@ class Song
   def self.create_from_filename(file_name)
     new_from_filename(file_name).save
   end
-
 end
 

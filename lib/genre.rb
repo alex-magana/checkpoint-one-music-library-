@@ -15,12 +15,10 @@
 # it to persist immediately.
 
 class Genre
-
   extend Concerns::Findable
-  extend Concerns::Generic
-  include Concerns::GenericInstance
+  include Concerns
 
-  attr_accessor   :name, :songs
+  attr_accessor :name, :songs
 
   @@all = []
 
@@ -32,5 +30,4 @@ class Genre
   def artists
     songs.map { |song| song.artist unless song.artist.nil? }.uniq
   end
-
 end
