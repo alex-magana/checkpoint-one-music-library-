@@ -3,8 +3,7 @@
 # all the files from the library and creates the Song objects.
 
 class MusicImporter
-
-  attr_accessor   :path
+  attr_accessor :path
 
   def initialize(path)
     @path = path
@@ -19,5 +18,4 @@ class MusicImporter
   def import
     files.each { |file| Song.create_from_filename(file) }
   end
-
 end
