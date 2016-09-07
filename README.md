@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-.svg?branch=develop)](https://travis-ci.org/andela-amagana/checkpoint-one-music-library-)
 [![Coverage Status](https://coveralls.io/repos/github/andela-amagana/checkpoint-one-music-library-/badge.svg)](https://coveralls.io/github/andela-amagana/checkpoint-one-music-library-)
+[![Code Climate](https://codeclimate.com/github/andela-amagana/checkpoint-one-music-library-/badges/gpa.svg)](https://codeclimate.com/github/andela-amagana/checkpoint-one-music-library-)
 
 # Santuri
 
@@ -16,14 +17,21 @@ A utility that allows you to:
 
 ## Usage:
 
-   * list songs: List all songs.
-   * list artists: List all artists.
-   * list genres: List all genres.
-   * play song: Play a song.
-   * list artist: List the artist.
-   * list genre: List the genre.
-   * exit: Quit the program.
-   * help: View available commands.
+   list songs: List all songs.
+   
+   list artists: List all artists.
+   
+   list genres: List all genres.
+   
+   play song: Play a song.
+   
+   list artist: List the artist.
+   
+   list genre: List the genre.
+   
+   exit: Quit the program.
+   
+   help: View available commands.
 
 ## Getting Started
    
@@ -55,7 +63,7 @@ A utility that allows you to:
 ### Running the application
    In the checkpoint-one-music-library directory:
 
-    1. Run `ruby bin/musiclibrary`
+    1. Run `bin/musiclibrary` for Mac OS and `ruby bin/musiclibrary`
 
 ### Running tests
    In the checkpoint-one-music-library directory:
@@ -65,3 +73,7 @@ A utility that allows you to:
 
 ## Guide for developing the application
 Use the instructions outlined in the wiki [Here](https://github.com/andela-amagana/checkpoint-one-music-library-/wiki)
+
+## Limitations
+   1. The application does not actually play the audio of the selected song.
+   2. The application relies on a naming convention for the file names to successfully import the files.
