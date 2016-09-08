@@ -16,7 +16,7 @@
 
 class Genre
   extend Concerns::Findable
-  include Concerns
+  include Concerns::ModelHelper
 
   attr_accessor :name, :songs
 

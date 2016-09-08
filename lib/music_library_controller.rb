@@ -8,16 +8,6 @@ class MusicLibraryController
   attr_accessor :path
   attr_reader :music_library_view
 
-  COMMANDS = {"list songs" => :list_songs,
-    "list artists" => :list_artists,
-    "list genres" => :list_genres,
-    "play song" => :play_song,
-    "list artist" => :list_artist,
-    "list genre" => :list_genre,
-    "help" => :help}
-
-  PROMPT = "santuri>".colorize(:yellow)
-
   def initialize(path = "./db/mp3s")
     @path = path
     MusicImporter.new(path).import
@@ -43,18 +33,21 @@ class MusicLibraryController
   end
 
   def list_songs
-    Song.all.each_with_index { |song, i| music_library_view.
-      list_songs(song, i) }
+    Song.all.each_with_index do |song, i|
+      music_library_view.list_songs(song, i)
+    end
   end
 
   def list_artists
-    Artist.all.each_with_index { |artist, i| music_library_view.
-      list_artists(artist, i) }
+    Artist.all.each_with_index do |artist, i|
+      music_library_view.list_artists(artist, i)
+    end
   end
 
   def list_genres
-    Genre.all.each_with_index { |genre, i| music_library_view.
-      list_genres(genre, i) }
+    Genre.all.each_with_index do |genre, i|
+      music_library_view.list_genres(genre, i)
+    end
   end
 
   def play_song
